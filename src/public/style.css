@@ -1,0 +1,49 @@
+
+.container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.container > * {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.photo {
+    background-image: url("images.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.square {   
+    background-color: rgba(0, 255, 0, 0.5);
+    display: none;
+}
+  
+.slide-right {
+    animation-duration: 2s;
+    animation-name: slidein;
+    display: block;
+}
+
+@keyframes slidein {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+  
+    50% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+      width: 0%;
+      opacity: 0;
+    }
+  }

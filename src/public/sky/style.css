@@ -1,0 +1,130 @@
+:root {
+  --boxShadow: '';
+  --boxShadow2: '';
+  --height: 100vh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  overflow: hidden;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container{
+  height: var(--height);
+  overflow-y: overlay;
+  background: linear-gradient(0, #120c56, #000000);
+}
+
+.top-buttons {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.top-buttons > * {
+  position: absolute;
+  height: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.stars {
+  position: relative;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+  box-shadow: var(--boxShadow);
+  animation: anim-stars 10s linear infinite;
+}
+
+.stars::after {
+  content: " ";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  top: var(--height);
+  border-radius: 50%;
+  box-shadow: var(--boxShadow);
+}
+
+.stars2 {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: var(--boxShadow2);
+  animation: anim-stars 20s linear infinite;
+}
+  
+.stars2::after{
+  content: " ";
+  position: absolute;
+  top: 150px;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: var(--boxShadow2);
+}
+
+@keyframes anim-stars {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(calc(-1 * var(--height)));
+    }
+}
+
+
+#spaceship {
+  width: 50px;
+  position: relative;
+  top: calc(100vh - 55px);
+  filter: opacity(0.5) drop-shadow(0 0 0 green);
+  left: 100px;
+}
+
+#shots {
+  position: relative;
+}
+
+#shots > div {
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  background-color: yellow;
+  top: 82vh;
+}
+
+
+#enemies {
+  position: relative;
+  top: 0;
+}
+
+#enemies > img {
+  position: absolute;
+  width: 50px;
+  filter: opacity(0.5) drop-shadow(0 0 0 red);
+  transform: rotate(180deg);
+  top: -55px;
+}
